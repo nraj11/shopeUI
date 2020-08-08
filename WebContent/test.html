@@ -1,0 +1,79 @@
+
+
+
+
+<li class=""><a href="#" class="has-submenu" id="sm-1595142660188333-1" aria-haspopup="true" aria-controls="sm-1595142660188333-2" aria-expanded="false">Men <span class="caret navbar-toggle sub-arrow"></span></a>
+    <ul class="dropdown-menu" id="sm-1595142660188333-2" role="group" aria-hidden="true" aria-labelledby="sm-1595142660188333-1" aria-expanded="false" style="width: auto; display: none;">                
+      <li><a href="#">Casual</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Formal</a></li>
+      <li><a href="#">Standard</a></li>                                                
+      <li><a href="#">T-Shirts</a></li>
+      <li><a href="#">Shirts</a></li>
+      <li><a href="#">Jeans</a></li>
+      <li><a href="#">Trousers</a></li>
+      <li><a href="#" class="has-submenu" id="sm-1595142660188333-3" aria-haspopup="true" aria-controls="sm-1595142660188333-4" aria-expanded="false">And more.. <span class="caret navbar-toggle sub-arrow"></span></a>
+        <ul class="dropdown-menu" id="sm-1595142660188333-4" role="group" aria-hidden="true" aria-labelledby="sm-1595142660188333-3" aria-expanded="false">
+          <li><a href="#">Sleep Wear</a></li>
+          <li><a href="#">Sandals</a></li>
+          <li><a href="#">Loafers</a></li>                                      
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+
+
+  <li class="open"><a href="#" class="has-submenu highlighted" id="sm-1595142660188333-1" aria-haspopup="true" aria-controls="sm-1595142660188333-2" aria-expanded="true">Men <span class="caret navbar-toggle sub-arrow"></span></a>
+    <ul class="dropdown-menu" id="sm-1595142660188333-2" role="group" aria-hidden="false" aria-labelledby="sm-1595142660188333-1" aria-expanded="true" style="width: auto; display: block;">                
+      <li><a href="#">Casual</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Formal</a></li>
+      <li><a href="#">Standard</a></li>                                                
+      <li><a href="#">T-Shirts</a></li>
+      <li><a href="#">Shirts</a></li>
+      <li><a href="#">Jeans</a></li>
+      <li><a href="#">Trousers</a></li>
+      <li><a href="#" class="has-submenu" id="sm-1595142660188333-3" aria-haspopup="true" aria-controls="sm-1595142660188333-4" aria-expanded="false">And more.. <span class="caret navbar-toggle sub-arrow"></span></a>
+        <ul class="dropdown-menu" id="sm-1595142660188333-4" role="group" aria-hidden="true" aria-labelledby="sm-1595142660188333-3" aria-expanded="false">
+          <li><a href="#">Sleep Wear</a></li>
+          <li><a href="#">Sandals</a></li>
+          <li><a href="#">Loafers</a></li>                                      
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+
+  $.ajax({
+    type : "GET",
+    url : " http://localhost:8080/master/findCatagories",
+    success : function(response) {
+        $('#userDynamicHeader').append('<li><a href="index.jsp">Home</a></li>');
+        var data=1;
+        var trHTML = '';
+        $.each(response,function(i, item) {
+            if(item.length != "0"){
+                trHTML='<li class="" onmouseover="onmauseOverMenu(this)" onmouseout="onmauseleaveMenu(this)"><a href="#" class="has-submenu" id="sm-1595139823483059-'+data+'" aria-haspopup="true" aria-controls="sm-1595139823483059-'+(data+1)+'" aria-expanded="false">'+i+' <span class="caret"></span></a>'+
+                '<ul class="dropdown-menu" id="sm-1595139823483059-'+(data+1)+'" role="group" aria-hidden="true" aria-labelledby="sm-1595139823483059-'+data+'" aria-expanded="false"> ';
+                $.each(item,function(j, subitem) {
+                     trHTML=trHTML+'<li><a href="#">'+subitem+'</a></li>';
+                });
+                data=data+1;
+            }else{
+                trHTML='<li><a href="">'+i+'</a></li>';
+            }
+            
+            trHTML=trHTML+'</ul></li>';
+            
+            $('#userDynamicHeader').append(trHTML);
+        });
+        $('#userDynamicHeader').append('<li><a href="contact.jsp">Contact</a></li>');
+    },
+    error : function(error) {
+        console.log(JSON.stringify(error));
+    }
+});// $.ajax({
+
+
+    <li class="" onmouseover="onmauseOverMenu(this)" onmouseout="onmauseleaveMenu(this)"><a href="#">Men <span class="caret"></span></a><ul class="dropdown-menu">
