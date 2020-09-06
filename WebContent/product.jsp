@@ -184,7 +184,7 @@
         <h2>Fashion</h2>
         <ol class="breadcrumb">
           <li><a href="index.jsp">Home</a></li>         
-          <li class="active">Women</li>
+          <li class="active">Men</li>
         </ol>
       </div>
      </div>
@@ -211,10 +211,10 @@
                 </form>
                 <form action="" class="aa-show-form">
                   <label for="">Show</label>
-                  <select name="">
-                    <option value="1" selected="12">12</option>
-                    <option value="2">24</option>
-                    <option value="3">36</option>
+                  <select name="" id="fetchnoOfProducts">
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
                   </select>
                 </form>
               </div>
@@ -292,21 +292,22 @@
             <div class="aa-product-catg-pagination">
               <nav>
                 <ul class="pagination">
-                  <li>
+                 <!--  <li>
                     <a href="#" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                     </a>
-                  </li>
-                  <li><a onclick="productListForPagination(0)" href="#">1</a></li>
+                  </li> -->
+                  <a onclick="productListForPagination(0)" class="aa-browse-btn" href="#">Next <span class="fa fa-long-arrow-right"></span></a>
+                  <!-- <li><a onclick="productListForPagination(0)" href="#">1</a></li>
                   <li><a onclick="productListForPagination(1)" href="#">2</a></li>
                   <li><a onclick="productListForPagination(2)" href="#">3</a></li>
                   <li><a onclick="productListForPagination(3)" href="#">4</a></li>
-                  <li><a onclick="productListForPagination(4)" href="#">5</a></li>
-                  <li>
+                  <li><a onclick="productListForPagination(4)" href="#">5</a></li> -->
+                  <!-- <li>
                     <a href="#" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </nav>
             </div>
@@ -319,14 +320,14 @@
               <h3>Category</h3>
               <ul class="aa-catg-nav">
                 <li><a href="#">Men</a></li>
-                <li><a href="">Women</a></li>
+                <!-- <li><a href="">Women</a></li>
                 <li><a href="">Kids</a></li>
                 <li><a href="">Electornics</a></li>
-                <li><a href="">Sports</a></li>
+                <li><a href="">Sports</a></li> -->
               </ul>
             </div>
             <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
+           <!--  <div class="aa-sidebar-widget">
               <h3>Tags</h3>
               <div class="tag-cloud">
                 <a href="#">Fashion</a>
@@ -337,7 +338,7 @@
                 <a href="#">Head Phone</a>
                 <a href="#">Pen Drive</a>
               </div>
-            </div>
+            </div> -->
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Shop By Price</h3>              
@@ -354,7 +355,7 @@
 
             </div>
             <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
+           <!--  <div class="aa-sidebar-widget">
               <h3>Shop By Color</h3>
               <div class="aa-color-tag">
                 <a class="aa-color-green" href="#"></a>
@@ -370,7 +371,7 @@
                 <a class="aa-color-olive" href="#"></a>
                 <a class="aa-color-orchid" href="#"></a>
               </div>                            
-            </div>
+            </div> -->
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Recently Views</h3>
@@ -596,6 +597,7 @@
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
   <script type="text/javascript">
+  var globalpage =0;
   $(function(){
     $("#topiconsonheader").append('<li id="myAccountPage"><a href="#">My Account</a></li>'+
                                     '<li id="myAccountWishList" class="hidden-xs"><a href="#">Wishlist</a></li>'+
@@ -656,10 +658,10 @@
 				console.log(JSON.stringify(error));
 			}
 		});// $.ajax({
-	  
+	  		
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/male/findAll/0/12",
+			url : " http://localhost:8080/male/findAll/0/"+$("#fetchnoOfProducts").val(),
 			success : function(response) {
 				console.log(response);
 				var trHTML = '';
@@ -699,39 +701,46 @@
 	  
 	  function productListForPagination(page){
 		  $('#shopproductList').children().remove();
+		  var fetchnoOfProducts=$("#fetchnoOfProducts").val();
 		  $.ajax({
 				type : "GET",
-				url : " http://localhost:8080/male/findAll/"+page+"/12",
+				url : " http://localhost:8080/male/findAll/"+globalpage+"/"+fetchnoOfProducts,
 				success : function(response) {
-					console.log(response);
 					var trHTML = '';
-					$.each(response,function(i, item) {
-						trHTML='<li><figure>'+
-						'<a class="aa-product-img" href="product-detail.jsp"><img style="width:250px;height:300px;" src="img/man/'+item.image+'" alt="No Image Found."></a>'+
-						'<a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a><figcaption>'+
-						'<h4 class="aa-product-title"><a href="">'+item.brand+' '+item.catagory+'</a></h4>';
-						if(item.offerprice == item.price){
-							trHTML=trHTML+'<span class="aa-product-price">Rs '+item.offerprice+'</span><span class="aa-product-price"></span></figcaption></figure><div class="aa-product-hvr-content">';
-						}else{
-							trHTML=trHTML+'<span class="aa-product-price">Rs '+item.offerprice+'</span><span class="aa-product-price"><del> Rs'+item.price+'</del></span></figcaption></figure><div class="aa-product-hvr-content">';
-						}
-						
-						trHTML=trHTML+'<a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>'+
-						'<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>'+
-						'<a onclick="quickviewButton('+item.id+')"href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"><span><a>';
-						if(item.offerprice == item.price){
-							trHTML=trHTML+'</div></li>';
-						}else if(item.offerprice*2 <= item.price){
-							trHTML=trHTML+'</div><span class="aa-badge aa-hot" href="#">HOT!</span></li>';
-						}else if(item.offerprice < item.price){
-							trHTML=trHTML+'</div><span class="aa-badge aa-sale" href="#">SALE!</span></li>';
-						}/* if(){
-							trHTML=trHTML+'</div><span class="aa-badge aa-sold-out" href="#">Sold Out!</span></li>';
-						} */
-						
-						$('#shopproductList').append(trHTML);
-					});
-			    },
+					if(response.length == "0"){
+						globalpage = "0";
+						productListForPagination(0);
+						//alert("blank");
+					}else{
+						$.each(response,function(i, item) {
+							trHTML='<li><figure>'+
+							'<a class="aa-product-img" href="product-detail.jsp"><img style="width:250px;height:300px;" src="img/man/'+item.image+'" alt="No Image Found."></a>'+
+							'<a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a><figcaption>'+
+							'<h4 class="aa-product-title"><a href="">'+item.brand+' '+item.catagory+'</a></h4>';
+							if(item.offerprice == item.price){
+								trHTML=trHTML+'<span class="aa-product-price">Rs '+item.offerprice+'</span><span class="aa-product-price"></span></figcaption></figure><div class="aa-product-hvr-content">';
+							}else{
+								trHTML=trHTML+'<span class="aa-product-price">Rs '+item.offerprice+'</span><span class="aa-product-price"><del> Rs'+item.price+'</del></span></figcaption></figure><div class="aa-product-hvr-content">';
+							}
+							
+							trHTML=trHTML+'<a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>'+
+							'<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>'+
+							'<a onclick="quickviewButton('+item.id+')"href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"><span><a>';
+							if(item.offerprice == item.price){
+								trHTML=trHTML+'</div></li>';
+							}else if(item.offerprice*2 <= item.price){
+								trHTML=trHTML+'</div><span class="aa-badge aa-hot" href="#">HOT!</span></li>';
+							}else if(item.offerprice < item.price){
+								trHTML=trHTML+'</div><span class="aa-badge aa-sale" href="#">SALE!</span></li>';
+							}/* if(){
+								trHTML=trHTML+'</div><span class="aa-badge aa-sold-out" href="#">Sold Out!</span></li>';
+							} */
+							
+							$('#shopproductList').append(trHTML);
+						});
+						globalpage=globalpage+1;
+					}
+				},
 				error : function(error) {
 					console.log(JSON.stringify(error));
 				}
