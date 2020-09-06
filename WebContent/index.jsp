@@ -295,7 +295,7 @@
                     <div class="aa-promo-banner">                      
                       <img src="img/promo-banner-4.jpeg" alt="img">                      
                       <div class="aa-prom-content">
-                        <span>New Arrivals</span>
+                         <span>Under Development</span>
                         <h4><a href="#">For Kids</a></h4>                        
                       </div>
                     </div>
