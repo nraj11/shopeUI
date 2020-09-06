@@ -179,19 +179,31 @@
       <div id="sequence" class="seq">
         <div class="seq-screen">
           <ul class="seq-canvas">
-            <!-- single slide item -->
+           
+           <li>
+              <div class="seq-model">
+                <img data-seq src="img/slider/men1.png" alt="Men slide img" />
+              </div>
+              <div class="seq-title">
+               <!-- <span data-seq>Save Up to 75% Off</span>  -->               
+                <h2 data-seq>Men Collection</h2>                
+                <p data-seq></p>
+                <!-- <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a> -->
+              </div>
+            </li>
             <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/1.png" alt="Men slide img" />
               </div>
               <div class="seq-title">
-               <span data-seq>Save Up to 75% Off</span>                
+               <!-- <span data-seq>Save Up to 75% Off</span>   -->              
                 <h2 data-seq>Men Collection</h2>                
                 <p data-seq></p>
-                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                <!-- <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a> -->
               </div>
             </li>
-            <!-- single slide item -->
+            
+           
            <!--  <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/2.jpeg" alt="women slide img" />
@@ -202,8 +214,8 @@
                 <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
                 <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
               </div>
-            </li> -->
-            <!-- single slide item -->
+            </li>
+           
             <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/3.jpg" alt="Kids slide img" />
@@ -215,8 +227,8 @@
                 <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
               </div>
             </li>
-            <!-- single slide item -->           
-            <!-- <li>
+                   
+            <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/4.jpg" alt="Medicine slide img" />
               </div>
@@ -226,9 +238,9 @@
                 <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
                 <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
               </div>
-            </li> -->
-            <!-- single slide item -->  
-             <!-- <li>
+            </li>
+            
+             <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/5.jpg" alt="Grocery slide img" />
               </div>
@@ -329,10 +341,7 @@
                 <!-- start prduct navigation -->
                  <ul class="nav nav-tabs aa-products-tab">
                     <li class="active"><a href="#men" data-toggle="tab">Men</a></li>
-                    <!-- <li><a href="#women" data-toggle="tab">Women</a></li> -->
-                    <li><a href="#sports" data-toggle="tab">Kids</a></li>
-                    <!-- <li><a href="#electronics" data-toggle="tab">Medicines</a></li>
-                    <li><a href="" data-toggle="tab">Grocery</a></li> -->
+                   <!--  <li><a href="#sports" data-toggle="tab">Kids</a></li> -->
                   </ul>
                   
                   <!-- Tab panes -->
@@ -343,21 +352,11 @@
                       </ul>
                       <a class="aa-browse-btn" href="product.jsp">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
                     </div>
-                    <div class="tab-pane fade" id="women">
+                    <!-- <div class="tab-pane fade" id="women">
                       <ul class="aa-product-catg">                      
                       </ul>
                       <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
-                    </div>
-                    <div class="tab-pane fade" id="sports">
-                      <ul class="aa-product-catg">                       
-                      </ul>
-                      <a class="aa-browse-btn" href="">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
-                    </div>
-                    <div class="tab-pane fade" id="electronics">
-                       <ul class="aa-product-catg">
-                       </ul>
-                      <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
-                    </div>
+                    </div> -->
                   </div>
                   
                   <!-- quick view modal -->                  
