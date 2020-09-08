@@ -633,7 +633,7 @@
 
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/master/findCatagories",
+			url : " http://localhost:8080/common/findCatagories",
 			success : function(response) {
 				var data=1,subdata=1;
 				var trHTML = '';
@@ -661,7 +661,7 @@
 	  		
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/male/findAll/0/"+$("#fetchnoOfProducts").val(),
+			url : " http://localhost:8080/common/findAllMaleProduct/0/"+$("#fetchnoOfProducts").val(),
 			success : function(response) {
 				console.log(response);
 				var trHTML = '';
@@ -704,7 +704,7 @@
 		  var fetchnoOfProducts=$("#fetchnoOfProducts").val();
 		  $.ajax({
 				type : "GET",
-				url : " http://localhost:8080/male/findAll/"+globalpage+"/"+fetchnoOfProducts,
+				url : " http://localhost:8080/common/findAllMaleProduct/"+globalpage+"/"+fetchnoOfProducts,
 				success : function(response) {
 					var trHTML = '';
 					if(response.length == "0"){
@@ -760,7 +760,7 @@
 	  function quickviewButton(productId){
 		  $.ajax({
 				type : "GET",
-				url : " http://localhost:8080/male/find/"+productId,
+				url : " http://localhost:8080/common/findMaleProduct/"+productId,
 				success : function(response) {
 					var sizeAvailable=0;
 					$("#quickviewImage").attr("src","img/man/"+response.image);

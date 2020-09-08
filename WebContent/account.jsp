@@ -407,7 +407,7 @@
 
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/master/findCatagories",
+			url : " http://localhost:8080/common/findCatagories",
 			success : function(response) {
 				var data=1,subdata=1;
 				var trHTML = '';
@@ -441,7 +441,7 @@
 			    }
 		        $.ajax({
 		  	        type: "POST",
-		  	        url: "http://localhost:8080/user/authenticate",
+		  	        url: "http://localhost:8080/common/authenticate",
 		  	        data: JSON.stringify(formData),
 		  	        processData: false,
 			        datatype : "application/json",
@@ -464,7 +464,7 @@
 			    }
 		        $.ajax({
 		  	        type: "POST",
-		  	        url: "http://localhost:8080/user/createUser",
+		  	        url: "http://localhost:8080/common/createUser",
 		  	        data: JSON.stringify(formData),
 		  	        processData: false,
 			        datatype : "application/json",

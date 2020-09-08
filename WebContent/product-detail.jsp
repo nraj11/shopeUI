@@ -794,7 +794,7 @@
 
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/master/findCatagories",
+			url : " http://localhost:8080/common/findCatagories",
 			success : function(response) {
 				var data=1,subdata=1;
 				var trHTML = '';
