@@ -201,7 +201,7 @@
 	  
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/master/adminHeader",
+			url : " http://localhost:8080/master/adminHeader/"+localStorage.getItem("ecomuserjwtdata"),
 			dataType : "json",
 			headers: {
 				'Authorization': 'Bearer ' + localStorage.getItem("ecomuserjwtdata"),
