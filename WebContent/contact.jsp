@@ -204,7 +204,7 @@
              <div class="row">
                <div class="col-md-8">
                  <div class="aa-contact-address-left">
-                   <form class="comments-form contact-form">
+                   <form class="comments-form contact-form" id="submitUserMessageForm">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">                        
@@ -475,22 +475,22 @@
 		});// $.ajax({
 				
 		
-		$('#submitUserMessage').on('click', function(e) { 
+		$('form#submitUserMessageForm').submit(function () {
 			$.ajax({
-		        type: "POST",
-		        url: "http://localhost:8080/common/saveUserMessage",
-		        //contentType: 'application/json',
-		        data: new FormData($("form")[0]),
-		        processData: false,
-		        success: function (response) {
-		        	alert("Your Message sent!")
-		        },
-		        error: function (error) {
-		        	alert("Message not sent.Try again.")
-		        }
-		      });
-			
-		});
+			type: "POST",
+			url: "http://localhost:8080/common/saveUserMessage",
+			data: new FormData($("#submitUserMessageForm")[0]),
+			processData: false,
+			contentType: false,
+			success: function (response) {
+			alert("Message Sent");
+			},
+			error: function (error) {
+			alert("Message Not sent");
+			}
+			});
+			return false;
+			});
 		 
 	  
   });//$(function(){
