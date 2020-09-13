@@ -204,36 +204,36 @@
              <div class="row">
                <div class="col-md-8">
                  <div class="aa-contact-address-left">
-                   <form class="comments-form contact-form" action="">
+                   <form class="comments-form contact-form">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">                        
-                          <input type="text" placeholder="Your Name" class="form-control">
+                          <input type="text" placeholder="Your Name" class="form-control" name="name">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">                        
-                          <input type="email" placeholder="Email" class="form-control">
+                          <input type="email" placeholder="Email" class="form-control" name="email">
                         </div>
                       </div>
                     </div>
                      <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">                        
-                          <input type="text" placeholder="Subject" class="form-control">
+                          <input type="text" placeholder="Subject" class="form-control" name="subject">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">                        
-                          <input type="text" placeholder="Company" class="form-control">
+                          <input type="text" placeholder="Mobile Number" class="form-control" name="mobile">
                         </div>
                       </div>
                     </div>                  
                      
                     <div class="form-group">                        
-                      <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                      <textarea class="form-control" rows="3" placeholder="Message" name="message"></textarea>
                     </div>
-                    <button class="aa-secondary-btn">Send</button>
+                    <button class="aa-secondary-btn" id="submitUserMessage">Send</button>
                   </form>
                  </div>
                </div>
@@ -473,6 +473,24 @@
 				console.log(JSON.stringify(error));
 			}
 		});// $.ajax({
+				
+		
+		$('#submitUserMessage').on('click', function(e) { 
+			$.ajax({
+		        type: "POST",
+		        url: "http://localhost:8080/common/saveUserMessage",
+		        //contentType: 'application/json',
+		        data: new FormData($("form")[0]),
+		        processData: false,
+		        success: function (response) {
+		        	alert("Your Message sent!")
+		        },
+		        error: function (error) {
+		        	alert("Message not sent.Try again.")
+		        }
+		      });
+			
+		});
 		 
 	  
   });//$(function(){
