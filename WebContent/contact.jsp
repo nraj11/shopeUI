@@ -508,9 +508,11 @@
 					   alert("Message can't be blank!")
 				   }
 				}
-				
-					return false;
-				});
+				return false;
+			});//$('form#submitUserMessageForm').submit
+			
+			
+			
 
 			});//$(function(){
 
