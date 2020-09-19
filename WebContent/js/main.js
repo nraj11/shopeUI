@@ -5,7 +5,7 @@ function allPageLogin(value){
 	}
     $.ajax({
 		  type: "POST",
-		  url: "<%=projectarticat %>/user/authenticate",
+		  url: "<%=projectarticat %>/common/authenticate",
 		  data: JSON.stringify(formData),
 		  processData: false,
 		  datatype : "application/json",
