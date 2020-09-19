@@ -1,3 +1,11 @@
+ <%@ page import = "java.util.ResourceBundle" %>
+ <% ResourceBundle resource = ResourceBundle.getBundle("config");
+    String projectarticat=resource.getString("project.artifact");
+ %>
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -407,7 +415,7 @@
 
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/common/findCatagories",
+			url : " <%=projectarticat %>/common/findCatagories",
 			success : function(response) {
 				var data=1,subdata=1;
 				var trHTML = '';
@@ -441,7 +449,7 @@
 			    }
 		        $.ajax({
 		  	        type: "POST",
-		  	        url: "http://localhost:8080/common/authenticate",
+		  	        url: "<%=projectarticat %>/common/authenticate",
 		  	        data: JSON.stringify(formData),
 		  	        processData: false,
 			        datatype : "application/json",
@@ -464,7 +472,7 @@
 			    }
 		        $.ajax({
 		  	        type: "POST",
-		  	        url: "http://localhost:8080/common/createUser",
+		  	        url: "<%=projectarticat %>/common/createUser",
 		  	        data: JSON.stringify(formData),
 		  	        processData: false,
 			        datatype : "application/json",

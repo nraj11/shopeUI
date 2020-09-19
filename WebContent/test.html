@@ -47,7 +47,7 @@
 
   $.ajax({
     type : "GET",
-    url : " http://localhost:8080/master/findCatagories",
+    url : " <%=projectarticat %>/master/findCatagories",
     success : function(response) {
         $('#userDynamicHeader').append('<li><a href="index.jsp">Home</a></li>');
         var data=1;

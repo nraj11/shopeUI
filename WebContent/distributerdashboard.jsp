@@ -1,3 +1,11 @@
+ <%@ page import = "java.util.ResourceBundle" %>
+ <% ResourceBundle resource = ResourceBundle.getBundle("config");
+    String projectarticat=resource.getString("project.artifact");
+ %>
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -201,7 +209,7 @@
 	  
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/distributer/header",
+			url : " <%=projectarticat %>/distributer/header",
 			dataType : "json",
 			headers: {
 				'Authorization': 'Bearer ' + localStorage.getItem("ecomuserjwtdata"),

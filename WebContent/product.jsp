@@ -1,3 +1,11 @@
+ <%@ page import = "java.util.ResourceBundle" %>
+ <% ResourceBundle resource = ResourceBundle.getBundle("config");
+    String projectarticat=resource.getString("project.artifact");
+ %>
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -633,7 +641,7 @@
 
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/common/findCatagories",
+			url : " <%=projectarticat %>/common/findCatagories",
 			success : function(response) {
 				var data=1,subdata=1;
 				var trHTML = '';
@@ -661,7 +669,7 @@
 	  		
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/common/findAllMaleProduct/0/"+$("#fetchnoOfProducts").val(),
+			url : " <%=projectarticat %>/common/findAllMaleProduct/0/"+$("#fetchnoOfProducts").val(),
 			success : function(response) {
 				console.log(response);
 				var trHTML = '';
@@ -704,7 +712,7 @@
 		  var fetchnoOfProducts=$("#fetchnoOfProducts").val();
 		  $.ajax({
 				type : "GET",
-				url : " http://localhost:8080/common/findAllMaleProduct/"+globalpage+"/"+fetchnoOfProducts,
+				url : " <%=projectarticat %>/common/findAllMaleProduct/"+globalpage+"/"+fetchnoOfProducts,
 				success : function(response) {
 					var trHTML = '';
 					if(response.length == "0"){
@@ -760,7 +768,7 @@
 	  function quickviewButton(productId){
 		  $.ajax({
 				type : "GET",
-				url : " http://localhost:8080/common/findMaleProduct/"+productId,
+				url : " <%=projectarticat %>/common/findMaleProduct/"+productId,
 				success : function(response) {
 					var sizeAvailable=0;
 					$("#quickviewImage").attr("src","img/man/"+response.image);

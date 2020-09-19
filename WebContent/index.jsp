@@ -1,3 +1,8 @@
+ <%@ page import = "java.util.ResourceBundle" %>
+ <% ResourceBundle resource = ResourceBundle.getBundle("config");
+    String projectarticat=resource.getString("project.artifact");
+ %>
+ 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
@@ -445,6 +450,7 @@
       </div>
     </div>
   </section>
+  
   <!-- popular section -->
   <section id="aa-popular-category">
     <div class="container">
@@ -1106,7 +1112,7 @@
   <script src="js/custom.js"></script> 
   <script type="text/javascript">
   $(function(){
-
+   
 	  $("#topiconsonheader").append('<li id="myAccountPage"><a href="#">My Account</a></li>'+
                                     '<li id="myAccountWishList" class="hidden-xs"><a href="#">Wishlist</a></li>'+
                                     '<li class="hidden-xs"><a href="cart.jsp">My Cart</a></li>'+
@@ -1141,7 +1147,7 @@
 	  
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/common/findCatagories",
+			url : " <%=projectarticat %>/common/findCatagories",
 			success : function(response) {
 				var data=1,subdata=1;
 				var trHTML = '';
@@ -1170,7 +1176,7 @@
 	  
 	  $.ajax({
 			type : "GET",
-			url : " http://localhost:8080/common/findAllMaleProduct/0/8",
+			url : " <%=projectarticat %>/common/findAllMaleProduct/0/8",
 			success : function(response) {
 				var trHTML = '';
 				$.each(response,function(i, item) {
@@ -1223,7 +1229,7 @@
 	  function quickviewButton(productId){
 		  $.ajax({
 				type : "GET",
-				url : " http://localhost:8080/common/findMaleProduct/"+productId,
+				url : " <%=projectarticat %>/common/findMaleProduct/"+productId,
 				success : function(response) {
 					var sizeAvailable=0;
 					$("#quickviewImage").attr("src","img/man/"+response.image);
@@ -1259,7 +1265,7 @@
 			
 				  /*$.ajax({
 						type : "GET",
-						url : " http://localhost:8080/cart/addToCart/"+userId+"/"+productId,
+						url : " <%=projectarticat %>/cart/addToCart/"+userId+"/"+productId,
 						success : function(response) {
 							alert(response);
 					    },
