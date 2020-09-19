@@ -475,39 +475,56 @@
 		});// $.ajax({
 				
 		
-		$('form#submitUserMessageForm').submit(function () {
-			$.ajax({
-			type: "POST",
-			url: "http://localhost:8080/common/saveUserMessage",
-			data: new FormData($("#submitUserMessageForm")[0]),
-			processData: false,
-			contentType: false,
-			success: function (response) {
-			alert("Message Sent");
-			},
-			error: function (error) {
-			alert("Message Not sent");
+	
+			$('form#submitUserMessageForm').submit(function() {
+				var name=$("#submitUserMessageForm")[0][0].value	
+				var email=$("#submitUserMessageForm")[0][1].value
+				var subject=$("#submitUserMessageForm")[0][2].value
+				var mobile=$("#submitUserMessageForm")[0][3].value
+				var message=$("#submitUserMessageForm")[0][4].value
+				if(name !="" && message!=""){
+					if(email !="" || mobile !=""){
+						$.ajax({
+							type : "POST",
+							url : "http://localhost:8080/common/saveUserMessage",
+							data : new FormData($("#submitUserMessageForm")[0]),
+							processData : false,
+							contentType : false,
+							success : function(response) {
+								alert("Message Sent");
+								$("#submitUserMessageForm")[0].reset()
+							},
+							error : function(error) {
+								alert("Message Not sent");
+							}
+						});
+					}else{
+						alert("Email and Mobile both can't be blank!");
+					}
+				}else{
+				   if(name ==""){
+					   alert("Name can't be blank!")
+				   }else{
+					   alert("Message can't be blank!")
+				   }
+				}
+				
+					return false;
+				});
+
+			});//$(function(){
+
+			function onmauseOverMenu(item) {
+				if ($(item).attr("class") == "open") {
+					$(item).attr("class", "");
+				} else {
+					$(item).attr("class", "open");
+				}
 			}
-			});
-			return false;
-			});
-		 
-	  
-  });//$(function(){
-	  
-	  function onmauseOverMenu(item){
-		  if($(item).attr("class") == "open"){
-			  $(item).attr("class","");
-		  }else{
-			  $(item).attr("class","open");
-		  }
-	  }
-	  function onmauseleaveMenu(item){
-		  $(item).attr("class","")
-	  }
-	  
-  
-  </script>
+			function onmauseleaveMenu(item) {
+				$(item).attr("class", "")
+			}
+		</script>
   
 
   </body>

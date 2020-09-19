@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -1103,6 +1106,7 @@
   <script src="js/custom.js"></script> 
   <script type="text/javascript">
   $(function(){
+
 	  $("#topiconsonheader").append('<li id="myAccountPage"><a href="#">My Account</a></li>'+
                                     '<li id="myAccountWishList" class="hidden-xs"><a href="#">Wishlist</a></li>'+
                                     '<li class="hidden-xs"><a href="cart.jsp">My Cart</a></li>'+
