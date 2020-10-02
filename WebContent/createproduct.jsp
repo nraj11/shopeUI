@@ -128,8 +128,70 @@
   <!-- / menu -->
 
 
-
-<h1 align="center">Welcome Distributer</h1>
+<section id="aa-myaccount">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+        <div class="aa-myaccount-area">         
+            <div class="row">
+              <div class="col-md-6">
+                <div class="aa-myaccount-register">                 
+                 <h4>Create Product</h4>
+                 <form action="" class="aa-login-form" id="">
+                    <label for="">Brand<span>*</span></label>
+                    <input id="" type="text" placeholder="Brand" name="brand">
+                    <label for="">Price<span>*</span></label>
+                    <input id="" type="text" placeholder="Price" name="price">
+                    <label for="">Offer Price<span>*</span></label>
+                    <input id="" type="text" placeholder="Offer Price" name="offerprice">
+                    <div class="dropdown" name="catagory">
+                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Select Catagory
+                       </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                               <a class="dropdown-item" href="#">Action</a>
+                               <a class="dropdown-item" href="#">Another action</a>
+                               <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div><br><br><br>
+                    <label for="">Description<span>*</span></label>
+                    <input id="" type="text" placeholder="Description" name="description">
+                    <label for="">Image<span>*</span></label>
+                    <input id="" type="text" placeholder="Image" name="image">
+                    
+                    <table class="table">
+                      <thead>
+                          <tr>
+                            <th scope="col">Size</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col" id="addRowInTable" class="btn btn-primary">Add Row</th>
+                          </tr>
+                      </thead>
+                      <tbody id="tBodySizeId">
+                           <tr>
+                             <td>Size</td>
+                             <td>Color</td>
+                             <td>Quantity</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    <button type="submit" class="aa-browse-btn" id="">Save</button>                    
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="aa-myaccount-register">                 
+                 <h4>List Product</h4>
+                 Display products added today.
+                </div>
+              </div>
+            </div>          
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
 
 
   
@@ -234,12 +296,16 @@
 				});
 		    },
 			error : function(error) {
-				console.log(JSON.stringify(error));
+				localStorage.clear();
+				window.location ="distributer.jsp"
 			}
 		});// $.ajax({
 		 
 	  
-
+		$("#addRowInTable").click(function(){
+			  $("#tBodySizeId").append('<tr><td>Size</td><td>Color</td><td>Quantity</td><td class="btn btn-danger" onclick="removeRecordFromTable(this)">Remove</td></tr>');
+		 
+		  });
 			
 			
 	  
@@ -254,6 +320,10 @@
 	  }
 	  function onmauseleaveMenu(item){
 		  $(item).attr("class","")
+	  }
+	  
+	  function removeRecordFromTable(e){
+		  e.parentElement.remove();
 	  }
 	  
 	  
