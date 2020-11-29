@@ -5,7 +5,7 @@ function allPageLogin(value){
 	}
     $.ajax({
 		  type: "POST",
-		  url: "<%=projectarticat %>/common/authenticate",
+		  url: "http://3.15.236.168:8080/shop/common/authenticate",
 		  data: JSON.stringify(formData),
 		  processData: false,
 		  datatype : "application/json",
