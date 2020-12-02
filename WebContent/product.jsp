@@ -321,125 +321,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
-          <aside class="aa-sidebar">
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Category</h3>
-              <ul class="aa-catg-nav">
-                <li><a href="#">Men</a></li>
-                <!-- <li><a href="">Women</a></li>
-                <li><a href="">Kids</a></li>
-                <li><a href="">Electornics</a></li>
-                <li><a href="">Sports</a></li> -->
-              </ul>
-            </div>
-            <!-- single sidebar -->
-           <!--  <div class="aa-sidebar-widget">
-              <h3>Tags</h3>
-              <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
-              </div>
-            </div> -->
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Shop By Price</h3>              
-              <!-- price range -->
-              <div class="aa-sidebar-price-range">
-               <form action="">
-                  <div id="skipstep" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                  </div>
-                  <span id="skip-value-lower" class="example-val">30.00</span>
-                 <span id="skip-value-upper" class="example-val">100.00</span>
-                 <button class="aa-filter-btn" type="submit">Filter</button>
-               </form>
-              </div>              
-
-            </div>
-            <!-- single sidebar -->
-           <!--  <div class="aa-sidebar-widget">
-              <h3>Shop By Color</h3>
-              <div class="aa-color-tag">
-                <a class="aa-color-green" href="#"></a>
-                <a class="aa-color-yellow" href="#"></a>
-                <a class="aa-color-pink" href="#"></a>
-                <a class="aa-color-purple" href="#"></a>
-                <a class="aa-color-blue" href="#"></a>
-                <a class="aa-color-orange" href="#"></a>
-                <a class="aa-color-gray" href="#"></a>
-                <a class="aa-color-black" href="#"></a>
-                <a class="aa-color-white" href="#"></a>
-                <a class="aa-color-cyan" href="#"></a>
-                <a class="aa-color-olive" href="#"></a>
-                <a class="aa-color-orchid" href="#"></a>
-              </div>                            
-            </div> -->
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Recently Views</h3>
-              <div class="aa-recently-views">
-                <ul>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>                                      
-                </ul>
-              </div>                            
-            </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Top Rated Products</h3>
-              <div class="aa-recently-views">
-                <ul>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>                                      
-                </ul>
-              </div>                            
-            </div>
-          </aside>
-        </div>
+        
        
       </div>
     </div>
@@ -454,7 +336,7 @@
         <div class="col-md-12">
           <div class="aa-subscribe-area">
             <h3>Subscribe our newsletter </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
+            <p></p>
             <form action="" class="aa-subscribe-form">
               <input type="email" name="" id="" placeholder="Enter your Email">
               <input type="submit" value="Subscribe">
@@ -475,46 +357,7 @@
         <div class="col-md-12">
           <div class="aa-footer-top-area">
             <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <h3>Main Menu</h3>
-                  <ul class="aa-footer-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Our Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <div class="aa-footer-widget">
-                    <h3>Knowledge Base</h3>
-                    <ul class="aa-footer-nav">
-                      <li><a href="#">Delivery</a></li>
-                      <li><a href="#">Returns</a></li>
-                      <li><a href="#">Services</a></li>
-                      <li><a href="#">Discount</a></li>
-                      <li><a href="#">Special Offer</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <div class="aa-footer-widget">
-                    <h3>Useful Links</h3>
-                    <ul class="aa-footer-nav">
-                      <li><a href="#">Site Map</a></li>
-                      <li><a href="#">Search</a></li>
-                      <li><a href="#">Advanced Search</a></li>
-                      <li><a href="#">Suppliers</a></li>
-                      <li><a href="#">FAQ</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
                   <div class="aa-footer-widget">
@@ -522,14 +365,9 @@
                     <address>
                       <p> Phulparas, Bihar, India</p>
                       <p><span class="fa fa-phone"></span>+91-9430686338</p>
-                      <p><span class="fa fa-envelope"></span>yelo11447@gmail.com</p>
+                      <p><span class="fa fa-envelope"></span>Rajnrj33@gmail.com</p>
                     </address>
-                    <div class="aa-footer-social">
-                      <a href="#"><span class="fa fa-facebook"></span></a>
-                      <a href="#"><span class="fa fa-twitter"></span></a>
-                      <a href="#"><span class="fa fa-google-plus"></span></a>
-                      <a href="#"><span class="fa fa-youtube"></span></a>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -545,13 +383,7 @@
         <div class="row">
         <div class="col-md-12">
           <div class="aa-footer-bottom-area">
-            <p>Designed by <a href="#">Nikhil</a></p>
-            <div class="aa-footer-payment">
-              <span class="fa fa-cc-mastercard"></span>
-              <span class="fa fa-cc-visa"></span>
-              <span class="fa fa-paypal"></span>
-              <span class="fa fa-cc-discover"></span>
-            </div>
+            <p>Developed by <a href="#">Nikhil</a></p>
           </div>
         </div>
       </div>
