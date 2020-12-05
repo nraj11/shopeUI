@@ -137,27 +137,24 @@
               <div class="col-md-6">
                 <div class="aa-myaccount-register">                 
                  <h4>Create Product</h4>
-                 <form action="" class="aa-login-form" id="">
+                 <form class="aa-login-form" id="createProductForm">
                     <label for="">Brand<span>*</span></label>
                     <input id="" type="text" placeholder="Brand" name="brand">
                     <label for="">Price<span>*</span></label>
                     <input id="" type="text" placeholder="Price" name="price">
                     <label for="">Offer Price<span>*</span></label>
                     <input id="" type="text" placeholder="Offer Price" name="offerprice">
-                    <div class="dropdown" name="catagory">
-                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Select Catagory
-                       </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                               <a class="dropdown-item" href="#">Action</a>
-                               <a class="dropdown-item" href="#">Another action</a>
-                               <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </div><br><br><br>
-                    <label for="">Description<span>*</span></label>
+                    <label for="catagorydropdowntype">Select Type<span>*</span></label>
+                    <select class="browser-default custom-select" name="catagoryType" id="catagorydropdowntype" onchange="setCatagory()">
+						<option selected>Select Type</option>
+					</select> <br><br>
+					<label for="catagorydropdown">Select Catagory<span>*</span></label>
+                    <select class="browser-default custom-select" name="catagory" id="catagorydropdown">
+					</select> <br>
+					<label for="">Description<span>*</span></label>
                     <input id="" type="text" placeholder="Description" name="description">
-                    <label for="">Image<span>*</span></label>
-                    <input id="" type="text" placeholder="Image" name="image">
+                    <label for="">Upload Image<span>*</span></label>
+                    <input id="" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="file"/>
                     
                     <table class="table">
                       <thead>
@@ -170,13 +167,13 @@
                       </thead>
                       <tbody id="tBodySizeId">
                            <tr>
-                             <td>Size</td>
-                             <td>Color</td>
-                             <td>Quantity</td>
+                             <td><input type="text" name="size"></td>
+                             <td><input type="text" name="color"></td>
+                             <td><input type="text" name="quantity"></td>
                           </tr>
                       </tbody>
                     </table>
-                    <button type="submit" class="aa-browse-btn" id="">Save</button>                    
+                    <button type="submit" class="aa-browse-btn" id="saveDistributerProduct">Save</button>                    
                   </form>
                 </div>
               </div>
@@ -295,13 +292,42 @@
 				window.location ="distributer.jsp"
 			}
 		});// $.ajax({
-		 
-	  
-		$("#addRowInTable").click(function(){
-			  $("#tBodySizeId").append('<tr><td>Size</td><td>Color</td><td>Quantity</td><td class="btn btn-danger" onclick="removeRecordFromTable(this)">Remove</td></tr>');
-		 
-		  });
 			
+		 $.ajax({
+				type : "GET",
+				url : " <%=projectarticat %>/common/findCatagories",
+				dataType : "json",
+				headers: {
+					'Authorization': 'Bearer ' + localStorage.getItem("ecomuserjwtdata"),
+			    },
+				success : function(response) {
+					var trHTML = '';
+					$.each(response,function(i, item) {
+						trHTML=trHTML+'<option value="'+i+'">'+i+'</option>';
+					});
+					$('#catagorydropdowntype').append(trHTML);
+				}
+			});// $.ajax({	
+		 
+			           
+		$("#addRowInTable").click(function(){
+			  $("#tBodySizeId").append('<tr><td><input type="text" name="size"></td><td><input type="text" name="color"></td> <td><input type="text" name="quantity"></td><td class="btn btn-danger" onclick="removeRecordFromTable(this)">Remove</td></tr>');		 
+		  });
+		
+		$('form#createProductForm').submit(function () {
+			$.ajax({
+				type : "POST",
+				url : " <%=projectarticat %>/distributer/saveAnyProduct",
+				dataType : "json",
+				headers: {
+					'Authorization': 'Bearer ' + localStorage.getItem("ecomuserjwtdata"),
+			    },
+				success : function(response) {
+					
+				}
+			});// $.ajax({	
+		});
+		
 			
 	  
   });//$(function(){
@@ -319,6 +345,26 @@
 	  
 	  function removeRecordFromTable(e){
 		  e.parentElement.remove();
+	  }
+	  
+	  function setCatagory(){
+		  $('#catagorydropdown').find('option').remove();
+		  var type=$('#catagorydropdowntype').val();
+		  $.ajax({
+				type : "GET",
+				url : " <%=projectarticat %>/common/findCatagories/"+type,
+				dataType : "json",
+				headers: {
+					'Authorization': 'Bearer ' + localStorage.getItem("ecomuserjwtdata"),
+			    },
+				success : function(response) {
+					var trHTML = '';
+					for(var i=0;i<response.length;i++){
+						trHTML=trHTML+'<option value="'+response[i]+'">'+response[i]+'</option>';
+					}
+					$('#catagorydropdown').append(trHTML);
+				}
+			});// $.ajax({	
 	  }
 	  
 	  
